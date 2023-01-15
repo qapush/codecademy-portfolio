@@ -19,7 +19,6 @@ h2,
 h3,
 h4 {
     text-align: center;
-    margin: 50px 0;
     font-family: 'Chivo', sans-serif;
 }
 
@@ -225,7 +224,6 @@ header {
     height: 50px;
     display: flex;
     justify-content: end;
-    background-color: rgb(33, 170, 186);
 }
 
 
@@ -235,7 +233,7 @@ header {
 button.hamburger span::after,
 button.hamburger span::before,
 .hamburger-inner {
-    background-color: rgb(232, 220, 79);
+    background-color: black;
 }
 
 button.is-active {
@@ -310,7 +308,6 @@ nav hr {
     }
 
     header {
-        background-color: rgb(232, 220, 79);
         justify-content: start;
     }
 
@@ -335,6 +332,45 @@ nav hr {
     .menu--desktop a:hover {
         background: none;
         color: black;
+    }
+
+}
+
+/* HERO */
+
+#hero {
+    height: 40vh;
+    display: flex;
+    background-color: green;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url('../img/hero.jpg');
+    background-size: cover;
+    margin-bottom: 0;
+    color: white;
+}
+
+#hero h1,
+#hero h2 {
+    line-height: 1.5;
+}
+
+@media only screen and (min-width: 768px) {
+    #hero {
+        height: 700px;
+        max-height: 80vh;
+        align-items: center;
+    }
+
+
+    #hero h1 {
+        font-size: 3rem;
+    }
+
+    #hero h2 {
+        font-size: 2.2rem;
     }
 
 }
