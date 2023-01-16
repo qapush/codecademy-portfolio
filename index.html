@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michael - Web developer</title>
-    <title>Website Design System</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -14,6 +13,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="./assets/styles/hamburgers.min.css">
     <link rel="stylesheet" href="./assets/styles/style.css">
+    <script src="https://unpkg.com/@dotlottie/player-component@1.0.0/dist/dotlottie-player.js"></script>
     <script src="./assets/js/app.js" defer></script>
 </head>
 
@@ -55,21 +55,30 @@
     </header>
     <main>
         <section id="hero" class="full-width noborder">
-            <span class="title">Hello<span>
-                    <span class="subtitle">I'm Michael<span>
+            <span class="title">Michael K.<span>
+                    <span class="subtitle">Web developer<span>
         </section>
         <div class="section" id="about">
             <h2 class="section__title">About</h2>
             <div class="about__content">
-                <img src="./assets/img/miskoltz.jpg" class="portrait" alt="">
+            <dotlottie-player class="lottie"
+                renderer="svg"
+                data-bm-renderer="svg"
+                autoplay
+                loop
+                mode="normal"
+                src="./assets/img/michael.lottie"
+                >
+            </dotlottie-player>
                 <div class="about__description">
                     <p>Vestibulum ligula orci, bibendum eget iaculis et, vehicula ut mauris. Sed quis justo vel mauris
                         efficitur elementum ac vel massa. Mauris scelerisque neque id felis finibus tincidunt.</p>
                     <div class="technologies">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
-                            alt="">
-                        <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="">
+                        <img src="./assets/img/logo-js.png" alt="Javascript logo">
+                        <img src="./assets/img/logo-react.png" alt="React logo">
+                        <img src="./assets/img/logo-node.png" alt="Node logo">
+                        <img src="./assets/img/logo-krpano.png" alt="Krpano logo">
+                        <img src="./assets/img/logo-git.png" alt="Git logo">
                     </div>
                 </div>
             </div>

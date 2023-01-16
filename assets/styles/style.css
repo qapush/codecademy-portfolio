@@ -252,6 +252,7 @@ button.is-active {
     font-size: 2rem;
     background-color: white;
     display: none;
+    z-index: 9;
 }
 
 .hamburger.is-active .hamburger-inner::before,
@@ -341,7 +342,7 @@ nav hr {
 /* HERO */
 
 #hero {
-    height: 40vh;
+    height: 20vh;
     display: flex;
     justify-content: center;
     align-items: start;
@@ -370,7 +371,7 @@ nav hr {
 
 @media only screen and (min-width: 768px) {
     #hero {
-        height: 700px;
+        height: 300px;
         max-height: 80vh;
         align-items: center;
     }
@@ -390,11 +391,17 @@ nav hr {
 
 }
 
-#about .portrait {
-    width: 180px;
-    border-radius: 10px;
-    display: block;
+/* ABOUT */
+
+
+#about .lottie {
+    width: 90%;
+    max-width: 400px;
     margin: 50px auto;
+}
+
+.lottie * {
+    margin: auto !important;
 }
 
 #about .about__description {
@@ -405,10 +412,12 @@ nav hr {
 
 .technologies {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .technologies img {
     max-height: 2rem;
+    margin: 1rem 0;
 }
 
 .technologies img:not(:last-child) {
@@ -424,7 +433,7 @@ nav hr {
 
     }
 
-    #about .portrait {
+    #about .lottie {
         margin: 0;
     }
 
