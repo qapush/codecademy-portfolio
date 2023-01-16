@@ -11,7 +11,7 @@
 
 html,
 body {
-    height: 100%;
+    min-height: 100%;
 }
 
 h1,
@@ -42,7 +42,6 @@ button {
 section {
     max-width: 750px;
     margin: 0 auto 50px;
-    border-top: 1px dashed black;
     padding: 0 10px;
 }
 
@@ -256,7 +255,9 @@ button.is-active {
 
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after,
-.hamburger.is-active .hamburger-inner {}
+.hamburger.is-active .hamburger-inner {
+    color: black;
+}
 
 button.is-active+.menu--mobile {
     display: flex;
@@ -349,6 +350,7 @@ nav hr {
     background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
         url('../img/hero.jpg');
     background-size: cover;
+    background-position: center;
     color: white;
     padding: 0 10%;
 }
@@ -443,5 +445,52 @@ nav hr {
 
     #about .about__description {
         margin: 2rem;
+    }
+}
+
+/* PROJECTS */
+
+.projects--wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    grid-gap: 0.5rem;
+    justify-content: center;
+}
+
+.project {
+    background-color: rgba(211, 211, 211, 0.4);
+    padding: 1rem;
+}
+
+.poject--cover {
+    overflow: cover;
+}
+
+.poject--cover img {
+    width: 100%;
+}
+
+.project ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project li {
+    padding: 0.5rem;
+    margin: 2px;
+    background-color: grey;
+    color: white;
+}
+
+@media only screen and (max-width: 375px) {
+    .projects--wrapper {
+        grid-template-columns: minmax(150px, 200px );
+    }
+}
+
+@media only screen and (min-width: 850px) {
+    .projects--wrapper {
+        grid-template-columns: repeat(4, 200px)
     }
 }
