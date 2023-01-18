@@ -453,21 +453,45 @@ nav hr {
 .projects--wrapper {
     display: grid;
     grid-template-columns: repeat(2, 200px);
-    grid-gap: 0.5rem;
+    gap: 1rem;
     justify-content: center;
 }
 
+.projects--wrapper a {
+    padding: 0;
+    color: black;
+    font-weight: unset;
+    display: block;
+}
+
 .project {
-    background-color: rgba(211, 211, 211, 0.4);
-    padding: 1rem;
+    border: 1px solid rgba(211, 211, 211, 0.4);
+    box-shadow: 0px 0px 10px 0px rgba(195, 195, 195, 1);
+    border-radius: 5px;
+    height: 100%;
 }
 
-.poject--cover {
-    overflow: cover;
+.project--cover {
+    overflow: hidden;
 }
 
-.poject--cover img {
-    width: 100%;
+.project--cover img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px 5px 0 0;
+}
+
+.project--description {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.project--description h3 {
+    margin: 1rem 0;
+}
+.project--description p {
+    margin: 0.3rem 0;
 }
 
 .project ul {
@@ -477,13 +501,13 @@ nav hr {
 }
 
 .project li {
-    padding: 0.5rem;
+    padding: 0.2rem 0.5rem;
     margin: 2px;
-    background-color: grey;
+    background-color: #c75656;
     color: white;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 460px) {
     .projects--wrapper {
         grid-template-columns: minmax(150px, 200px );
     }
@@ -491,6 +515,6 @@ nav hr {
 
 @media only screen and (min-width: 850px) {
     .projects--wrapper {
-        grid-template-columns: repeat(4, 200px)
+        grid-template-columns: repeat(3, 200px)
     }
 }
