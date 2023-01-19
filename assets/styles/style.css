@@ -452,7 +452,7 @@ nav hr {
 
 .projects--wrapper {
     display: grid;
-    grid-template-columns: repeat(2, 200px);
+    grid-template-columns: repeat(2, minmax(150px, 200px));
     gap: 1rem;
     justify-content: center;
 }
@@ -476,7 +476,7 @@ nav hr {
 }
 
 .project--cover img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     display: block;
     border-radius: 5px 5px 0 0;
@@ -507,13 +507,13 @@ nav hr {
     color: white;
 }
 
-@media only screen and (max-width: 460px) {
+@media only screen and (max-width: 350px) {
     .projects--wrapper {
-        grid-template-columns: minmax(150px, 200px );
+        grid-template-columns: 1fr;
     }
 }
 
-@media only screen and (min-width: 850px) {
+@media only screen and (min-width: 768px) {
     .projects--wrapper {
         grid-template-columns: repeat(3, 200px)
     }
