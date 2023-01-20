@@ -490,6 +490,7 @@ nav hr {
 .project--description h3 {
     margin: 1rem 0;
 }
+
 .project--description p {
     margin: 0.3rem 0;
 }
@@ -517,4 +518,19 @@ nav hr {
     .projects--wrapper {
         grid-template-columns: repeat(3, 200px)
     }
+}
+
+/* CONTACT */
+
+#contact {
+    text-align: center;
+}
+
+.contact__icons {
+    margin: 1rem auto;
+}
+
+.contact__icon img {
+    width: 30px;
+    height: auto;
 }
