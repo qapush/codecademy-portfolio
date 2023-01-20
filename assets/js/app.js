@@ -6,6 +6,11 @@ mobileMenuButton.addEventListener('click', () => {
     mobileMenuButton.classList.toggle('is-active')
 })
 
+document.querySelectorAll('.menu--mobile a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenuButton.classList.remove('is-active');
+    })
+})
 
 // Center lottie animation
 const player = document.querySelector('.lottie');
