@@ -460,9 +460,14 @@ nav hr {
 
 .project {
     border: 1px solid rgba(211, 211, 211, 0.4);
-    box-shadow: 0px 0px 10px 0px rgba(195, 195, 195, 1);
     border-radius: 5px;
     height: 100%;
+    transition-property: box-shadow;
+    transition-duration: 400ms;
+}
+
+.project:hover {
+    box-shadow: 0px 0px 10px 0px rgba(195, 195, 195, 1);
 }
 
 .project--cover {
@@ -543,4 +548,37 @@ footer img {
     height: auto;
     opacity: 0.5;
     cursor: pointer;
+}
+
+/* GAME */
+
+#game {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: aquamarine;
+    z-index: 99;
+    top: 0;
+}
+
+.game-cards {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(4, 1fr);
+    aspect-ratio: 1 / 1;
+    justify-content: center;
+    padding: 5px;
+    max-width: 700px;
+    margin: auto;
+}
+
+.game-card {
+    background-color: beige;
+    overflow: hidden;
+    max-height: 500px;
+}
+
+.game-card img {
+    height: 100%;
+    width: auto;
 }
