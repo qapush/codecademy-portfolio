@@ -48,7 +48,7 @@ const urls = [
     `${baseUrl}c8.jpg`,
 ]
 const images = [...urls, ...urls];
-let cardSelected = null;
+let cardSelected = [];
 let cards = null;
 
 // ===> FUNCTIONS
@@ -71,7 +71,6 @@ const populateCards = () => {
         const oneCard = document.createElement('div');
         const cardImage = document.createElement('img');
         cardImage.dataset.index = index;
-        cardImage.dataset.opened = false;
         oneCard.classList.add('game-card');
         cardImage.src = baseUrl + 'pattern.jpg';
         oneCard.appendChild(cardImage);
@@ -87,16 +86,56 @@ const addListeners = () => {
    } )
 }
 
+const revealCard = (card) => {
+    const cardIndex = +card.dataset.index;
+    const cardImage = images[cardIndex];
+    card.src = cardImage
+    cardSelected.push({
+        cardIndex, 
+        cardImage
+    });
 
+}
 
+const isAlreadySelected = cardToCheck => {
+    return cardSelected.some( card => card.cardIndex === +cardToCheck.dataset.index);
+}
+
+const match = () => {
+    cardSelected.forEach(card => {
+        cards[card.cardIndex].firstChild.style.border = '2px solid lime';
+        cards[card.cardIndex].removeEventListener('click', handleClick);
+    })
+    cardSelected = [];
+}
+
+const hideCards = () => {
+    cardSelected.forEach( item => {
+        console.log(cards[item.cardIndex]);
+        cards[item.cardIndex].firstChild.src = baseUrl + 'pattern.jpg';
+    })
+    cardSelected = [];
+}
 
 const handleClick = (e) => {
 
-    if(!cardSelected){
-        e.target.src = images[e.target.dataset.index]; 
-        e.target.dataset.opened = 'true'; 
-    }
+    const card = e.target;
 
+    if(cardSelected.length < 2 && !isAlreadySelected(card)){
+        revealCard(card);
+    }  
+    
+    if (cardSelected.length === 2 && cardSelected[0].cardImage === cardSelected[1].cardImage){
+       match();
+    }  
+
+    if (cardSelected.length === 2 && cardSelected[0].cardImage !== cardSelected[1].cardImage){
+        setTimeout(hideCards, 1000);
+    }  
+
+    
+
+    
 }
 
 
