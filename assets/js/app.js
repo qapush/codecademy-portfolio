@@ -20,10 +20,23 @@ player.shadowRoot.querySelector('.main').style.margin = 'auto';
 player.shadowRoot.querySelector('.animation').style.margin = 'auto';
 
 
-// GAME
+/* 
+    
+ ██████╗  █████╗ ███╗   ███╗███████╗
+██╔════╝ ██╔══██╗████╗ ████║██╔════╝
+██║  ███╗███████║██╔████╔██║█████╗  
+██║   ██║██╔══██║██║╚██╔╝██║██╔══╝  
+╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗
+ ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝
+                                    
+
+*/
+
+
+// ===> VARIABLES
 
 const baseUrl = './assets/img/game/';
-const cardsWrapper = document.querySelector('.game-cards');
+const game = document.querySelector('#game');
 const urls = [
     `${baseUrl}c1.jpg`,
     `${baseUrl}c2.jpg`,
@@ -35,6 +48,10 @@ const urls = [
     `${baseUrl}c8.jpg`,
 ]
 const images = [...urls, ...urls];
+let cardSelected = null;
+let cards = null;
+
+// ===> FUNCTIONS
 
 const shuffleImages = () => {
     for (let i = 0; i < images.length; i++) {
@@ -43,27 +60,52 @@ const shuffleImages = () => {
     }
 }
 
-const setupImages = () => {
-    cardsImages.forEach((card, index) => {
-        card.src = images[index];
-    })
+const clearBoard = () => {
+    if(document.querySelector('#game .game-cards')) document.querySelector('#game .game-cards').remove();
 }
 
 const populateCards = () => {
+    const board = document.createElement('div');
+    board.classList.add('game-cards');
     images.forEach((item, index) => {
-        const card = document.createElement('div');
+        const oneCard = document.createElement('div');
         const cardImage = document.createElement('img');
-        card.dataset.index = index;
-        card.classList.add('game-card');
-        cardImage.src = item;
-        card.appendChild(cardImage);
-        cardsWrapper.appendChild(card);
+        cardImage.dataset.index = index;
+        cardImage.dataset.opened = false;
+        oneCard.classList.add('game-card');
+        cardImage.src = baseUrl + 'pattern.jpg';
+        oneCard.appendChild(cardImage);
+        board.appendChild(oneCard);
     })
+    cards = board.querySelectorAll('.game-card');
+    game.appendChild(board);
+}
+
+const addListeners = () => {
+   images.forEach( (item, index) => {
+    cards[index].addEventListener('click', handleClick)
+   } )
 }
 
 
 
-shuffleImages();
-populateCards();
-// setupImages();
-// const cardsImages = document.querySelectorAll('.game-card img');
+
+const handleClick = (e) => {
+
+    if(!cardSelected){
+        e.target.src = images[e.target.dataset.index]; 
+        e.target.dataset.opened = 'true'; 
+    }
+
+}
+
+
+const startNewGame = () => {
+    clearBoard();
+    shuffleImages();
+    populateCards();
+    addListeners();
+}
+
+startNewGame();
+

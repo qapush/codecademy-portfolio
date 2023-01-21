@@ -576,6 +576,7 @@ footer img {
     background-color: beige;
     overflow: hidden;
     max-height: 500px;
+    cursor: pointer;
 }
 
 .game-card img {
