@@ -238,9 +238,25 @@
 
     </main>
     <footer>
-        <img src="./assets/img/dice.svg" alt="Game button">
+        <img src="./assets/img/dice.svg" alt="Game button" id="game-open">
     </footer>
-    <div id="game"></div>
+    <div id="game">
+        <div class="game-panel">
+            <div class="game-buttons">
+                <button id="game-hide">
+                    Back to site
+                </button>
+                <button id="game-newgame">
+                    Start new game
+                </button>
+            </div>
+            <div id="game-message">
+                <p>
+                    You've found all the matches in <span id="game-time"></span>
+                </p>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

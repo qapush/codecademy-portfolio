@@ -33,10 +33,6 @@ h3 {
 button {
     padding: 20px;
     cursor: pointer;
-    border-style: solid;
-    border-width: 2px;
-    font-weight: 700;
-    margin: 10px auto;
 }
 
 section {
@@ -559,13 +555,37 @@ footer img {
     background-color: rgb(64 37 44);
     z-index: 99;
     top: 0;
+    display: none;
+}
+
+.game-buttons {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.game-buttons button {
+    margin: 0 1rem;
+    background-color: #0039f3;
+    border: none;
+    font-weight: bold;
+    color: white;
+}
+
+.game-buttons button:hover {
+    background-color: #f33300;
+}
+
+#game-message {
+    color: white;
+    text-align: center;
+    display: none;
 }
 
 .game-cards {
     display: grid;
     gap: 5px;
     grid-template-columns: repeat(4, 1fr);
-    aspect-ratio: 1 / 1;
     justify-content: center;
     padding: 5px;
     max-width: 700px;
@@ -577,6 +597,7 @@ footer img {
     overflow: hidden;
     max-height: 500px;
     cursor: pointer;
+    aspect-ratio: 1 / 1;
 }
 
 .game-card img {
